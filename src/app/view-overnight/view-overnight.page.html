@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="back()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Logged Sessions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let data of overnightData; let i=index;">
+    <ion-fab horizontal="end">
+      <ion-fab-button size="small" (click)="presentAlert(i)">
+        <ion-icon name="close"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-card-header>
+      <ion-card-title>{{overnightData[i].dateString()}}</ion-card-title>
+      <ion-card-content>
+        Sleep Time: {{overnightData[i].sleepStart.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}}
+        <br>Wake Time: {{overnightData[i].sleepEnd.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}}
+        <br>Summary: {{overnightData[i].summaryString()}}
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

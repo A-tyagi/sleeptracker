@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="back()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Logged Sleepiness</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let data of sleepinessData; let i=index;">
+    <ion-fab horizontal="end">
+      <ion-fab-button size="small" (click)="presentAlert(i)">
+        <ion-icon name="close"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-card-header>
+      <ion-card-title>Sleepiness Rating: {{sleepinessData[i].loggedValue}}</ion-card-title>
+      <ion-card-content>
+        {{sleepinessData[i].loggedAt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year:'numeric' })}}
+        - {{sleepinessData[i].loggedAt.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}}
+        <br>{{sleepinessData[i].summaryString()}}
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

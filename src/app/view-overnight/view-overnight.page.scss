@@ -1,0 +1,27 @@
+ion-card-header {
+  padding: 7px 15px;
+}
+
+ion-card-content {
+  padding: 5px;
+}
+
+ion-card {
+  margin: 10px !important;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 10px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 10px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important;
+}
+
+ion-fab-button {
+  --background: linear-gradient(145deg, #ffffff, #0cd1e8) !important;
+  --background-activated: linear-gradient(145deg, #ffffff, #0cd1e8) !important;
+  --color-hover: #0cd1e8 !important;
+  --background-hover: #0cd2e800 !important;
+  --box-shadow: 5px 5px 10px #cfcfcf, -5px -5px 10px #ffffff !important;
+  height: 30px !important;
+  width: 30px !important;
+}

@@ -1,0 +1,15 @@
+ion-button {
+  padding: 0px 0px !important;
+  margin: 12px !important;
+  --border-radius: 8px;
+}
+
+ion-card-header {
+  padding: 7px 15px;
+}
+
+ion-card {
+  margin: 35px 25px !important;
+  -webkit-box-shadow: -9px 9px 18px #666666, 9px -9px 18px #ffffff !important;
+  box-shadow: -9px 9px 18px #666666, 9px -9px 18px #ffffff !important;
+}

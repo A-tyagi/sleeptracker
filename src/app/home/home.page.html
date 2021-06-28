@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title size="large">
+      Sleep Tracker
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- LOG SlEEP SESSION -->
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Log Sleep Session</ion-card-title>
+    </ion-card-header>
+    <!-- SAVE START TIME -->
+    <ion-item lines="full">
+      <ion-label>Sleep Start:</ion-label>
+      <ion-datetime display-format="MM/DD h:mm A" [(ngModel)]='start'>
+      </ion-datetime>
+    </ion-item>
+     <!-- SAVE END TIME -->
+    <ion-item lines="full">
+      <ion-label>Sleep End:</ion-label>
+      <ion-datetime display-format="MM/DD h:mm A" [(ngModel)]='end'>
+      </ion-datetime>
+    </ion-item>
+     <!-- ONLY SHOW SAVE BUTTON IF BOTH START AND END TIMES HAVE BEEN PROVIDED -->
+    <ion-button *ngIf="start && end" expand="block" color="tertiary" (click)="saveSleepSession(start,end)">SAVE
+    </ion-button>
+    <ion-button expand="block" color="secondary" (click)="goToOvernight()">VIEW</ion-button>
+  </ion-card>
+
+  <!-- LOF SLEEPINESS RATING -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Log Sleepiness</ion-card-title>
+    </ion-card-header>
+    <ion-item lines="full">
+      <ion-label>Time:</ion-label>
+      <ion-datetime display-format="MM/DD h:mm A" [(ngModel)]='ratingTime'>
+      </ion-datetime>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label>Rating:</ion-label>
+      <ion-select interface="popover" [(ngModel)]="ratingLevel">
+        <ion-select-option value="1">1 - Feeling Active</ion-select-option>
+        <ion-select-option value="2">2 - Functioning</ion-select-option>
+        <ion-select-option value="3">3 - Awake</ion-select-option>
+        <ion-select-option value="4">4 - Let Down</ion-select-option>
+        <ion-select-option value="5">5 - Foggy</ion-select-option>
+        <ion-select-option value="6">6 - Sleepy</ion-select-option>
+        <ion-select-option value="7">7 - Sleep Onset</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button *ngIf="ratingTime && ratingLevel" expand="block" color="tertiary"
+      (click)="saveRating(ratingTime,ratingLevel)">SAVE</ion-button>
+    <ion-button expand="block" color="secondary" (click)="goToSleepiness()">VIEW</ion-button>
+  </ion-card>
+
+</ion-content>
